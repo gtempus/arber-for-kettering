@@ -5,195 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arber for Kettering City Council - Leadership for a Stronger Community">
     <title>Arber for Kettering City Council</title>
-    <style>
-        /* Refined Color Scheme */
-        :root {
-            --primary-green: #2E5E4E;       /* Main campaign green */
-            --green-light: #4D8C73;         /* Lighter green */
-            --gold-accent: #D4AF37;         /* Warm gold */
-            --gold-light: #F0D87F;          /* Light gold */
-            --accent-red: #A64253;          /* Earthy red */
-            --text-dark: #333333;           /* Main text */
-            --text-light: #F8F9FA;          /* Light text */
-            --neutral-light: #F5F5F5;       /* Light bg */
-            --font-main: 'Helvetica Neue', Arial, sans-serif;
-            --font-heading: 'Georgia', serif;
-        }
-
-        /* Base Styles (same structure) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: white;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        h1 { font-size: 2.2rem; color: var(--primary-green); }
-        h2 { font-size: 1.8rem; }
-        h3 { font-size: 1.4rem; }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Header with new colors */
-        header {
-            background-color: var(--primary-green);
-            color: var(--text-light);
-            padding: 1.5rem 0;
-            border-bottom: 6px solid var(--gold-accent);
-        }
-
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 0.5rem;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
-        }
-
-        .tagline {
-            color: var(--gold-light);
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            margin-top: -0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* Hero section */
-        .hero {
-            background: linear-gradient(rgba(46, 94, 78, 0.85), rgba(46, 94, 78, 0.85)),
-            url('hero-image.jpg') center/cover;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        /* Sections with new color assignments */
-        .section {
-            padding: 2rem 0;
-        }
-
-        .section-alt {
-            background-color: var(--neutral-light);
-        }
-
-        /* Platform items */
-        .platform-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .platform-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 5px;
-            border-top: 4px solid var(--green-light);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Call-to-action */
-        .cta {
-            background-color: var(--accent-red);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 5px;
-            margin: 2rem 0;
-        }
-
-        /* Buttons */
-        button {
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background-color: #8A3545;
-            transform: translateY(-2px);
-        }
-
-        .btn-gold {
-            background-color: var(--gold-accent);
-            color: var(--text-dark);
-        }
-
-        .btn-gold:hover {
-            background-color: var(--gold-light);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-green);
-            color: var(--text-light);
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 6px solid var(--gold-accent);
-        }
-
-        .social-links a {
-            color: var(--gold-light);
-            margin: 0 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .header-content {
-                flex-direction: row;
-                justify-content: space-between;
-                text-align: left;
-            }
-
-            .logo {
-                margin-bottom: 0;
-            }
-
-            h1 { font-size: 2.8rem; }
-            h2 { font-size: 2.2rem; }
-            h3 { font-size: 1.8rem; }
-
-            .platform-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 992px) {
-            .platform-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!-- Header with logo -->
@@ -215,9 +27,9 @@
     <div class="container">
         <h2>Building a Better Kettering for All</h2>
         <p>Join our movement for positive change, transparent leadership, and a brighter future for our community.</p>
-        <div style="margin-top: 1.5rem;">
+        <div class="hero-buttons">
             <button>Volunteer</button>
-            <button class="btn-gold" style="margin-left: 1rem;">Donate</button>
+            <button class="btn-gold">Donate</button>
         </div>
     </div>
 </section>
@@ -267,8 +79,10 @@
 <section class="section">
     <div class="container">
         <h2>Endorsements</h2>
-        <p>"Arber has the vision and work ethic Kettering needs. His practical approach to problem-solving will serve our city well."</p>
-        <p>- Former Mayor Jane Smith</p>
+        <div class="testimonial">
+            <p>"Arber has the vision and work ethic Kettering needs. His practical approach to problem-solving will serve our city well."</p>
+            <p class="testimonial-author">- Former Mayor Jane Smith</p>
+        </div>
     </div>
 </section>
 
@@ -278,9 +92,9 @@
         <div class="cta">
             <h2>Join Our Movement</h2>
             <p>Your support can help us win this election and make real change.</p>
-            <div style="margin-top: 1.5rem;">
+            <div class="cta-buttons">
                 <button class="btn-gold">Donate Now</button>
-                <button style="margin-left: 1rem;">Volunteer</button>
+                <button>Volunteer</button>
             </div>
         </div>
     </div>
@@ -292,17 +106,17 @@
         <h2>Stay Updated</h2>
         <p>Sign up for campaign updates and event invitations:</p>
 
-        <form id="emailSignupForm" style="max-width: 500px; margin-top: 1.5rem;">
-            <div style="margin-bottom: 1rem;">
-                <input type="text" placeholder="Your Name" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+        <form id="emailSignupForm" class="signup-form">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
             </div>
-            <div style="margin-bottom: 1rem;">
-                <input type="email" placeholder="Email Address" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
             </div>
-            <div style="margin-bottom: 1.5rem;">
-                <input type="text" placeholder="Zip Code" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+            <div class="form-group">
+                <input type="text" placeholder="Zip Code" pattern="\d{5}" title="5-digit ZIP code">
             </div>
-            <button type="submit" style="width: 100%;">Stay Informed</button>
+            <button type="submit">Stay Informed</button>
         </form>
     </div>
 </section>
@@ -313,22 +127,21 @@
         <h3>Arber for Kettering City Council</h3>
         <p>Paid for by Friends of Arber</p>
 
-        <div class="social-links" style="margin: 1rem 0;">
+        <div class="social-links">
             <a href="#" aria-label="Facebook">Facebook</a>
             <a href="#" aria-label="Twitter">Twitter</a>
             <a href="#" aria-label="Instagram">Instagram</a>
         </div>
 
-        <p>&copy; 2023 Friends of Arber. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">
-            <a href="#" style="color: var(--gold-light);">Privacy Policy</a> |
-            <a href="#" style="color: var(--gold-light);">Terms of Service</a>
-        </p>
+        <p class="copyright">&copy; 2023 Friends of Arber. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
     </div>
 </footer>
 
 <script>
-  // Form handling would be added here
   document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Thank you for signing up!');
