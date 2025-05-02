@@ -8,24 +8,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- Header with logo -->
-<header>
+<!-- Sticky Header -->
+<header class="sticky-header">
     <div class="container header-content">
         <div>
             <img src="candidate-logo.png" alt="Arber for Kettering City Council" class="logo">
             <p class="tagline">Leadership for a Stronger Community</p>
         </div>
-        <div>
-            <h1>Arber</h1>
-            <p>For Kettering City Council</p>
-        </div>
     </div>
 </header>
 
-<!-- Hero section with portrait -->
+<!-- Hero Section with Portrait -->
 <section class="hero">
     <div class="container hero-content">
-        <img src="candidate-logo.png" alt="Arber for Kettering City Council" class="hero-logo">
         <div class="hero-text">
             <h2>Building a Better Kettering for All</h2>
             <p>Join our movement for positive change, transparent leadership, and a brighter future for our community.</p>
@@ -37,15 +32,15 @@
     </div>
 </section>
 
-<!-- About section -->
+<!-- About Section -->
 <section class="section">
     <div class="container">
         <h2>About Arber</h2>
-        <p>A lifelong Kettering resident and small business owner, Arber brings practical experience and fresh ideas to city government. With his experience in [relevant field], he understands the challenges facing our community and has real solutions to move Kettering forward.</p>
+        <p>A lifelong Kettering resident and small business owner, Arber brings practical experience and fresh ideas to city government. With his experience in community development, he understands the challenges facing our community and has real solutions to move Kettering forward.</p>
     </div>
 </section>
 
-<!-- Platform/Issues -->
+<!-- Platform Section -->
 <section class="section section-alt">
     <div class="container">
         <h2>Our Platform</h2>
@@ -89,7 +84,7 @@
     </div>
 </section>
 
-<!-- Call-to-action -->
+<!-- Call-to-Action -->
 <section class="section section-alt">
     <div class="container">
         <div class="cta">
@@ -103,7 +98,7 @@
     </div>
 </section>
 
-<!-- Email signup -->
+<!-- Email Signup -->
 <section class="section">
     <div class="container">
         <h2>Stay Updated</h2>
@@ -145,6 +140,17 @@
 </footer>
 
 <script>
+  // Sticky header effect
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.sticky-header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Form handling
   document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Thank you for signing up!');
