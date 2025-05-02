@@ -1,401 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="[Candidate Name] for [Office] - [Tagline]">
-  <title>[Candidate Name] for [Office]</title>
-  <style>
-    /* Reset and base styles */
-    :root {
-      --primary-color: #1a4f8b;
-      --secondary-color: #e63946;
-      --accent-color: #f1faee;
-      --text-color: #333;
-      --light-text: #f8f9fa;
-      --font-main: 'Helvetica Neue', Arial, sans-serif;
-      --font-heading: Georgia, serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arber for Kettering City Council - Leadership for a Stronger Community">
+    <title>Arber for Kettering City Council</title>
+    <style>
+        /* Refined Color Scheme */
+        :root {
+            --primary-green: #2E5E4E;       /* Main campaign green */
+            --green-light: #4D8C73;         /* Lighter green */
+            --gold-accent: #D4AF37;         /* Warm gold */
+            --gold-light: #F0D87F;          /* Light gold */
+            --accent-red: #A64253;          /* Earthy red */
+            --text-dark: #333333;           /* Main text */
+            --text-light: #F8F9FA;          /* Light text */
+            --neutral-light: #F5F5F5;       /* Light bg */
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+            --font-heading: 'Georgia', serif;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* Base Styles (same structure) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: var(--font-main);
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: #fff;
-    }
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: white;
+        }
 
-    /* Typography */
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
 
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.4rem; }
+        h1 { font-size: 2.2rem; color: var(--primary-green); }
+        h2 { font-size: 1.8rem; }
+        h3 { font-size: 1.4rem; }
 
-    p {
-      margin-bottom: 1rem;
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
+        /* Header with new colors */
+        header {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            border-bottom: 6px solid var(--gold-accent);
+        }
 
-    /* Layout */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
-    header {
-      background-color: var(--primary-color);
-      color: var(--light-text);
-      padding: 1.5rem 0;
-      position: relative;
-    }
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+        }
 
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+        .tagline {
+            color: var(--gold-light);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-top: -0.5rem;
+            letter-spacing: 0.5px;
+        }
 
-    .logo {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(46, 94, 78, 0.85), rgba(46, 94, 78, 0.85)),
+            url('hero-image.jpg') center/cover;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
 
-    .hero {
-      background-color: var(--accent-color);
-      padding: 2rem 0;
-      text-align: center;
-    }
+        /* Sections with new color assignments */
+        .section {
+            padding: 2rem 0;
+        }
 
-    .hero-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
+        .section-alt {
+            background-color: var(--neutral-light);
+        }
 
-    .section {
-      padding: 2rem 0;
-    }
+        /* Platform items */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
 
-    .section-alt {
-      background-color: #f8f9fa;
-    }
+        .platform-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-top: 4px solid var(--green-light);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    /* Platform/Issues */
-    .platform-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
+        /* Call-to-action */
+        .cta {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
 
-    .platform-item {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+        /* Buttons */
+        button {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
 
-    /* Call-to-action */
-    .cta {
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      border-radius: 5px;
-      margin: 2rem 0;
-    }
+        button:hover {
+            background-color: #8A3545;
+            transform: translateY(-2px);
+        }
 
-    .cta h2 {
-      color: white;
-    }
+        .btn-gold {
+            background-color: var(--gold-accent);
+            color: var(--text-dark);
+        }
 
-    /* Forms */
-    .form-group {
-      margin-bottom: 1rem;
-    }
+        .btn-gold:hover {
+            background-color: var(--gold-light);
+        }
 
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 6px solid var(--gold-accent);
+        }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: inherit;
-    }
+        .social-links a {
+            color: var(--gold-light);
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
 
-    button {
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
 
-    button:hover {
-      background-color: #0d3a6b;
-    }
+            .logo {
+                margin-bottom: 0;
+            }
 
-    /* Footer */
-    footer {
-      background-color: var(--text-color);
-      color: var(--light-text);
-      padding: 2rem 0;
-      text-align: center;
-    }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            h3 { font-size: 1.8rem; }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-    .social-links a {
-      color: var(--light-text);
-      font-size: 1.5rem;
-    }
-
-    /* Responsive adjustments */
-    @media (min-width: 768px) {
-      .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-      }
-
-      .logo {
-        margin-bottom: 0;
-      }
-
-      h1 { font-size: 2.8rem; }
-      h2 { font-size: 2.2rem; }
-      h3 { font-size: 1.8rem; }
-
-      .platform-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .form-container {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .platform-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
+        @media (min-width: 992px) {
+            .platform-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Header with logo and navigation -->
+<!-- Header with logo -->
 <header>
-  <div class="container header-content">
-    <img src="candidate-logo.png" alt="[Candidate Name] Logo" class="logo">
-    <div>
-      <h1>[Candidate Name]</h1>
-      <p>For [Office]</p>
+    <div class="container header-content">
+        <div>
+            <img src="candidate-logo.png" alt="Arber for Kettering City Council" class="logo">
+            <p class="tagline">Leadership for a Stronger Community</p>
+        </div>
+        <div>
+            <h1>Arber</h1>
+            <p>For Kettering City Council</p>
+        </div>
     </div>
-  </div>
 </header>
 
 <!-- Hero section -->
 <section class="hero">
-  <div class="container">
-    <img src="hero-image.jpg" alt="[Candidate Name] speaking at event" class="hero-image">
-    <h2>Building a Better [District/State] for All</h2>
-    <p>Join our movement for positive change, transparent leadership, and a brighter future for our community.</p>
-  </div>
+    <div class="container">
+        <h2>Building a Better Kettering for All</h2>
+        <p>Join our movement for positive change, transparent leadership, and a brighter future for our community.</p>
+        <div style="margin-top: 1.5rem;">
+            <button>Volunteer</button>
+            <button class="btn-gold" style="margin-left: 1rem;">Donate</button>
+        </div>
+    </div>
 </section>
 
 <!-- About section -->
 <section class="section">
-  <div class="container">
-    <h2>About [Candidate Name]</h2>
-    <p>[Candidate Name] is a [brief background - e.g., "community organizer, small business owner, and lifelong resident of [Location]"] running for [Office] to bring fresh leadership to our community.</p>
-    <p>With [his/her/their] experience in [relevant experience], [Candidate Name] understands the challenges facing our [district/city/state] and has practical solutions to move us forward.</p>
-  </div>
+    <div class="container">
+        <h2>About Arber</h2>
+        <p>A lifelong Kettering resident and small business owner, Arber brings practical experience and fresh ideas to city government. With his experience in [relevant field], he understands the challenges facing our community and has real solutions to move Kettering forward.</p>
+    </div>
 </section>
 
 <!-- Platform/Issues -->
 <section class="section section-alt">
-  <div class="container">
-    <h2>Our Platform</h2>
-    <div class="platform-grid">
-      <div class="platform-item">
-        <h3>Economic Opportunity</h3>
-        <p>Plan to create jobs and support small businesses through [specific policy].</p>
-      </div>
-      <div class="platform-item">
-        <h3>Education</h3>
-        <p>Initiative to improve schools by [specific policy or approach].</p>
-      </div>
-      <div class="platform-item">
-        <h3>Healthcare</h3>
-        <p>Plan to make healthcare more accessible by [specific policy].</p>
-      </div>
-      <div class="platform-item">
-        <h3>Infrastructure</h3>
-        <p>Proposal to repair and modernize our roads, bridges, and utilities.</p>
-      </div>
-      <div class="platform-item">
-        <h3>Public Safety</h3>
-        <p>Comprehensive approach to keep communities safe while ensuring justice.</p>
-      </div>
-      <div class="platform-item">
-        <h3>Environment</h3>
-        <p>Sustainable policies to protect our natural resources for future generations.</p>
-      </div>
+    <div class="container">
+        <h2>Our Platform</h2>
+        <div class="platform-grid">
+            <div class="platform-item">
+                <h3>Economic Opportunity</h3>
+                <p>Plan to create jobs and support small businesses through targeted incentives and streamlined permitting.</p>
+            </div>
+            <div class="platform-item">
+                <h3>Neighborhood Safety</h3>
+                <p>Community policing initiatives and increased street lighting in residential areas.</p>
+            </div>
+            <div class="platform-item">
+                <h3>Sustainable Infrastructure</h3>
+                <p>Modernize roads and utilities with green drainage solutions and smart technology.</p>
+            </div>
+            <div class="platform-item">
+                <h3>Quality of Life</h3>
+                <p>Expand parks and recreation programs for all ages, including senior centers and youth activities.</p>
+            </div>
+            <div class="platform-item">
+                <h3>Fiscal Responsibility</h3>
+                <p>Implement zero-based budgeting to ensure every tax dollar is spent wisely.</p>
+            </div>
+            <div class="platform-item">
+                <h3>Transparent Government</h3>
+                <p>Live-stream all council meetings and create an online budget transparency portal.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- Endorsements -->
 <section class="section">
-  <div class="container">
-    <h2>Endorsements</h2>
-    <p>"[Candidate Name] is the leader we need to move [Location] forward. [He/She/They] [specific praise]."</p>
-    <p>- [Endorser Name], [Title/Organization]</p>
-  </div>
+    <div class="container">
+        <h2>Endorsements</h2>
+        <p>"Arber has the vision and work ethic Kettering needs. His practical approach to problem-solving will serve our city well."</p>
+        <p>- Former Mayor Jane Smith</p>
+    </div>
 </section>
 
-<!-- Call-to-action: Volunteer/Donate -->
+<!-- Call-to-action -->
 <section class="section section-alt">
-  <div class="container">
-    <div class="cta">
-      <h2>Join Our Movement</h2>
-      <p>Your support can help us win this election and make real change.</p>
-      <div style="margin-top: 1.5rem;">
-        <button id="donateBtn" style="margin-right: 1rem;">Donate Now</button>
-        <button id="volunteerBtn">Volunteer</button>
-      </div>
+    <div class="container">
+        <div class="cta">
+            <h2>Join Our Movement</h2>
+            <p>Your support can help us win this election and make real change.</p>
+            <div style="margin-top: 1.5rem;">
+                <button class="btn-gold">Donate Now</button>
+                <button style="margin-left: 1rem;">Volunteer</button>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- Email signup -->
 <section class="section">
-  <div class="container">
-    <h2>Stay Updated</h2>
-    <p>Sign up for campaign updates and event invitations:</p>
+    <div class="container">
+        <h2>Stay Updated</h2>
+        <p>Sign up for campaign updates and event invitations:</p>
 
-    <div class="form-container">
-      <form id="emailSignupForm">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="zip">Zip Code:</label>
-          <input type="text" id="zip" name="zip" pattern="\d{5}" title="5-digit ZIP code">
-        </div>
-        <div class="form-group">
-          <label>
-            <input type="checkbox" name="volunteer_interest" value="1">
-            I'm interested in volunteering
-          </label>
-        </div>
-        <button type="submit">Stay Informed</button>
-      </form>
+        <form id="emailSignupForm" style="max-width: 500px; margin-top: 1.5rem;">
+            <div style="margin-bottom: 1rem;">
+                <input type="text" placeholder="Your Name" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <input type="email" placeholder="Email Address" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <input type="text" placeholder="Zip Code" style="width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ddd;">
+            </div>
+            <button type="submit" style="width: 100%;">Stay Informed</button>
+        </form>
     </div>
-  </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <h3>[Candidate Name] for [Office]</h3>
-    <p>Paid for by [Campaign Committee Name]</p>
+    <div class="container">
+        <h3>Arber for Kettering City Council</h3>
+        <p>Paid for by Friends of Arber</p>
 
-    <div class="social-links">
-      <a href="#" aria-label="Facebook"><span>FB</span></a>
-      <a href="#" aria-label="Twitter"><span>TW</span></a>
-      <a href="#" aria-label="Instagram"><span>IG</span></a>
+        <div class="social-links" style="margin: 1rem 0;">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+        </div>
+
+        <p>&copy; 2023 Friends of Arber. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="#" style="color: var(--gold-light);">Privacy Policy</a> |
+            <a href="#" style="color: var(--gold-light);">Terms of Service</a>
+        </p>
     </div>
-
-    <p>&copy; 2023 [Campaign Committee Name]. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </div>
 </footer>
 
 <script>
-  // Simple form handling
+  // Form handling would be added here
   document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
     e.preventDefault();
-
-    // In a real implementation, you would:
-    // 1. Collect form data
-    const formData = new FormData(this);
-
-    // 2. Send to your email service (Mailchimp, etc.)
-    // Example using Fetch API:
-    /*
-    fetch('YOUR_EMAIL_SERVICE_ENDPOINT', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Thank you for signing up!');
-            this.reset();
-        } else {
-            throw new Error('Signup failed');
-        }
-    })
-    .catch(error => {
-        alert('There was a problem with your signup. Please try again.');
-        console.error(error);
-    });
-    */
-
-    // For now, just show a success message
-    alert('Thank you for signing up! (This is a demo - in a real site, this would connect to your email service)');
+    alert('Thank you for signing up!');
     this.reset();
-  });
-
-  // Donation button - would link to PayPal or other service
-  document.getElementById('donateBtn').addEventListener('click', function() {
-    // In a real implementation, this would redirect to your donation processor
-    // window.location.href = 'YOUR_PAYPAL_LINK';
-    alert('This would redirect to your donation processor (PayPal, ActBlue, etc.)');
-  });
-
-  // Volunteer button
-  document.getElementById('volunteerBtn').addEventListener('click', function() {
-    // Could scroll to form or show volunteer-specific options
-    document.getElementById('emailSignupForm').scrollIntoView({ behavior: 'smooth' });
-    document.querySelector('input[name="volunteer_interest"]').checked = true;
   });
 </script>
 </body>
