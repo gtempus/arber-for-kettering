@@ -27,6 +27,21 @@ body {
     padding-top: 100px;
 }
 
+/* General Nested List Styling */
+ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+ul ul {
+    padding-left: 2rem;
+    list-style-type: circle;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
 /* Sticky Header */
 .sticky-header {
     position: fixed;
