@@ -50,7 +50,7 @@
             <h1>My Message to You</h1>
             <p>I am committed to being a council member who listens and represents the voices of our community.</p>
             <div class="hero-buttons">
-                <button>Keep me informed</button>
+                <button onclick="scrollToEmailSignup()">Keep me informed</button>
                 <button class="btn-gold">Donate</button>
             </div>
         </div>
@@ -112,7 +112,7 @@
 </section>
 
 <!-- Email Signup -->
-<section class="section">
+<section id="emailSignup" class="section">
     <div class="container">
         <h2>Stay Updated</h2>
         <p>Sign up for campaign updates and event invitations:</p>
@@ -159,6 +159,21 @@
       header.classList.remove('scrolled');
     }
   });
+
+  function scrollToEmailSignup() {
+    const emailSection = document.getElementById('emailSignup');
+    if (emailSection) {
+      emailSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      const firstInput = emailSection.querySelector('input');
+      if (firstInput) {
+        setTimeout(() => firstInput.focus(), 500);
+      }
+    }
+  }
 
   // Form handling
   document.getElementById('emailSignupForm').addEventListener('submit', async function (e) {
