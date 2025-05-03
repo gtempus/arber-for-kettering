@@ -9,6 +9,8 @@ export async function onRequestPost(context) {
       timestamp: new Date().toISOString()
     };
 
+    console.log(`[LOGGING FROM /submit-email]: Submission Info: ${JSON.stringify(submission, null, 2)}`);
+
     // Validate required fields
     if (!submission.name || !submission.email) {
       return new Response(JSON.stringify({
