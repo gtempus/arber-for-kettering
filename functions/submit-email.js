@@ -9,7 +9,7 @@ export async function onRequestPost(context) {
       timestamp: new Date().toISOString()
     };
 
-    console.log(`[LOGGING FROM /submit-email]: Submission Info: ${JSON.stringify(submission, null, 2)}`);
+    console.log(`[LOGGING FROM /submit-email]: Submission Info: ${JSON.stringify(submission)}`);
 
     // Validate required fields
     if (!submission.name || !submission.email) {
@@ -37,6 +37,7 @@ export async function onRequestPost(context) {
     });
 
   } catch (error) {
+    console.error(`[LOGGING FROM /submit-email]: ${error}`);
     return new Response(JSON.stringify({
       success: false,
       message: 'An error occurred while processing your submission'
