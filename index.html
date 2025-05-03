@@ -120,16 +120,16 @@
         <form id="emailSignupForm" class="signup-form">
             <div class="form-group">
                 <label>
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
                 </label>
             </div>
             <div class="form-group">
                 <label>
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </label>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Zip Code" pattern="\d{5}" title="5-digit ZIP code">
+                <input type="text" name="zip" placeholder="Zip Code" pattern="\d{5}" title="5-digit ZIP code">
             </div>
             <button type="submit">Stay Informed</button>
         </form>
@@ -161,10 +161,29 @@
   });
 
   // Form handling
-  document.getElementById('emailSignupForm').addEventListener('submit', function (e) {
+  document.getElementById('emailSignupForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    alert('Thank you for signing up!');
-    this.reset();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/submit-email', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Thank you for signing up!');
+        form.reset();
+      } else {
+        alert('Error: ' + result.message);
+      }
+    } catch (error) {
+      alert('There was an error submitting the form. Please try again.');
+      console.error('Form submission error:', error);
+    }
   });
 </script>
 </body>
