@@ -20,7 +20,7 @@ export async function onRequestPost(context) {
     }
 
     // Get KV namespace (make sure to bind it in your Pages settings)
-    const kv = context.env.FORM_SUBMISSIONS;
+    const kv = context.env.EMAIL_SUBMISSIONS;
 
     // Generate a unique ID for this submission
     const id = Date.now().toString();
