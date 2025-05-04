@@ -85,7 +85,7 @@ li {
 
 /* Hero Section - Two Column Layout */
 .hero {
-    padding: 100px 0 60px;
+    padding: 75px 0 60px;
     background-color: var(--primary-green);
     color: white;
 }
@@ -173,7 +173,7 @@ li {
 /* Adjustments for sticky header */
 @media (max-width: 991px) {
     .hero {
-        padding-top: 140px;
+        padding-top: 75px;
     }
 }
 
