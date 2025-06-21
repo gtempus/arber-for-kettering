@@ -329,8 +329,7 @@ footer {
     color: #e4405f;
 }
 
-/* NEW TESTIMONIALS STYLES */
-/* Testimonials Section */
+/* TESTIMONIALS SECTION */
 .section-testimonials {
     background-color: #f8f9fa;
     padding: 3rem 0;
@@ -340,13 +339,25 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    height: 420px; /* Fixed height */
+    min-height: 400px;
 }
 
 .testimonials-header {
     text-align: center;
     margin-bottom: 2.5rem;
     color: var(--primary-green);
+    font-size: 2rem;
+    position: relative;
+}
+
+.testimonials-header:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--bronze-accent);
+    margin: 0.5rem auto;
+    border-radius: 2px;
 }
 
 .testimonial {
@@ -370,6 +381,7 @@ footer {
 
 .testimonial.active {
     opacity: 1;
+    position: relative;
 }
 
 .testimonial-content {
@@ -440,6 +452,7 @@ footer {
     transform: scale(1.2);
 }
 
+/* Responsive adjustments */
 @media (min-width: 768px) {
     .testimonial {
         padding: 2.5rem;
@@ -451,7 +464,7 @@ footer {
     }
 
     .testimonials-container {
-        height: 380px; /* Slightly shorter on desktop */
+        min-height: 380px;
     }
 }
 
@@ -466,6 +479,52 @@ footer {
     }
 
     .testimonials-container {
-        height: 450px; /* Taller on mobile for more text */
+        min-height: 480px;
     }
+
+    .testimonial-text:before {
+        top: -0.8rem;
+        left: -0.3rem;
+    }
+
+    .testimonial-text:after {
+        bottom: -1.8rem;
+        right: -0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-text {
+        font-size: 0.98rem;
+        line-height: 1.6;
+    }
+
+    .testimonials-container {
+        min-height: 520px;
+    }
+}
+
+/* Floating dots */
+.floating-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.floating-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(205, 127, 50, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.floating-dot.active {
+    background: var(--bronze-accent);
+    transform: scale(1.3);
 }
