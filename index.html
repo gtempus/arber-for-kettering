@@ -116,7 +116,7 @@
         <h2 class="testimonials-header">What People Are Saying</h2>
         <div class="testimonials-container">
             <!-- Testimonial 1 -->
-            <div class="testimonial active" id="testimonial1">
+            <div class="testimonial active" id="testimonial1" data-duration="15000">
                 <div class="testimonial-content">
                     <p class="testimonial-text">I’ve volunteered alongside Laura for over two decades, starting when we served together on the Kettering Board of Community Relations. For the past 15  years, we’ve continued that volunteer together on the Kettering Parks and Recreation Board. Laura brings a thoughtful, inclusive, and steady voice to everything she’s involved in. She listens, collaborates, and truly cares about this community. I’ve seen firsthand her dedication, and I’m proud to support her for Council At-Large—Kettering will be better with her leadership.</p>
                     <p class="testimonial-author">Dr. Robert Leonard</p>
@@ -124,7 +124,7 @@
                 </div>
             </div>
             <!-- Testimonial 2 -->
-            <div class="testimonial" id="testimonial2">
+            <div class="testimonial" id="testimonial2" data-duration="10000">
                 <div class="testimonial-content">
                     <p class="testimonial-text">I’ve known Laura for over 15 years and had the privilege of volunteering on the Board of Community Relations, and the Kettering Parks and Recreation Board. She’s thoughtful, committed, and deeply invested in our community. I fully support her run for Council At-Large.</p>
                     <p class="testimonial-author">Dr. Robert Leonard</p>
@@ -244,65 +244,47 @@
   document.addEventListener('DOMContentLoaded', function() {
     const testimonials = document.querySelectorAll('.testimonial');
     const dots = document.querySelectorAll('.testimonial-dot');
+    const container = document.querySelector('.testimonials-container');
     let currentIndex = 0;
-    let interval;
+    let timeoutId;
 
-    // Function to show a specific testimonial
     function showTestimonial(index) {
-      // Hide all testimonials
-      testimonials.forEach(testimonial => {
-        testimonial.classList.remove('active');
-      });
+      // Hide all testimonials and dots
+      testimonials.forEach(t => t.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
 
-      // Remove active class from all dots
-      dots.forEach(dot => {
-        dot.classList.remove('active');
-      });
-
-      // Show the selected testimonial
+      // Show selected testimonial and dot
       testimonials[index].classList.add('active');
-
-      // Activate the corresponding dot
       dots[index].classList.add('active');
-
       currentIndex = index;
+
+      // Clear any pending timeout
+      clearTimeout(timeoutId);
+
+      // Schedule next rotation using current testimonial's duration
+      const duration = testimonials[index].dataset.duration || 5000;
+      timeoutId = setTimeout(nextTestimonial, duration);
     }
 
-    // Function to go to next testimonial
     function nextTestimonial() {
-      let nextIndex = (currentIndex + 1) % testimonials.length;
+      const nextIndex = (currentIndex + 1) % testimonials.length;
       showTestimonial(nextIndex);
     }
 
-    // Set up automatic rotation
-    function startCarousel() {
-      interval = setInterval(nextTestimonial, 5000); // Change every 5 seconds
-    }
+    // Initialize carousel
+    showTestimonial(0);
 
-    // Start the carousel
-    startCarousel();
-
-    // Add click events to dots
+    // Dot navigation
     dots.forEach(dot => {
       dot.addEventListener('click', function() {
-        const testimonialIndex = parseInt(this.getAttribute('data-testimonial')) - 1;
-        showTestimonial(testimonialIndex);
-
-        // Reset timer when user manually selects a testimonial
-        clearInterval(interval);
-        startCarousel();
+        const targetIndex = parseInt(this.dataset.testimonial) - 1;
+        showTestimonial(targetIndex);
       });
     });
 
-    // Pause on hover for better user experience
-    const container = document.querySelector('.testimonials-container');
-    container.addEventListener('mouseenter', () => {
-      clearInterval(interval);
-    });
-
-    container.addEventListener('mouseleave', () => {
-      startCarousel();
-    });
+    // Pause on hover
+    container.addEventListener('mouseenter', () => clearTimeout(timeoutId));
+    container.addEventListener('mouseleave', () => nextTestimonial());
   });
 </script>
 </body>
