@@ -45,9 +45,16 @@ li {
 
 .header-group {
     display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+}
+
+/* Portrait + logo container */
+.header-identity {
+    display: flex;
     align-items: center;
     gap: 15px;
-    width: 100%;
 }
 
 /* Sticky Header */
@@ -108,9 +115,15 @@ li {
 .tagline {
     color: var(--bronze);
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    margin-top: -0.5rem;
+    font-size: 1rem;
     letter-spacing: 0.5px;
+    margin-top: 10px;
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+    order: 2; /* Ensure it appears below */
+    position: relative;
+    padding-top: 10px;
 }
 
 /* Hero Section - Two Column Layout */
@@ -570,10 +583,21 @@ footer {
 
     .header-group {
         justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .tagline {
         margin-top: 0;
+        margin-left: 15px;
+        text-align: left;
+        flex: 1 0 100%; /* Force to new line */
+        order: 1;
+    }
+
+    .tagline::before {
+        display: none; /* Hide on desktop */
     }
 
     .sticky-header .header-portrait {
@@ -584,5 +608,14 @@ footer {
     .sticky-header.scrolled .header-portrait {
         width: 40px;
         height: 40px;
+    }
+
+    .header-identity {
+        flex: 0 0 auto;
+    }
+
+    /* Adjust scrolled state */
+    .sticky-header.scrolled .tagline {
+        font-size: 0.9rem;
     }
 }
