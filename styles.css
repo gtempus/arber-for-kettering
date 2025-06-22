@@ -43,6 +43,13 @@ li {
     margin-bottom: 0.5rem;
 }
 
+.header-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
 /* Sticky Header */
 .sticky-header {
     position: fixed;
@@ -71,10 +78,11 @@ li {
     height: 60px;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 15px;
     border: 2px solid white;
     flex-shrink: 0;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sticky-header .header-portrait img {
@@ -85,10 +93,9 @@ li {
 
 .header-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Keep column layout for mobile */
     align-items: center;
     text-align: center;
-    align-items: center;
 }
 
 .logo {
@@ -117,7 +124,6 @@ li {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center;
     justify-content: center;
 }
 
@@ -138,7 +144,6 @@ li {
 .hero-content {
     width: 100%;
     max-width: 600px;
-    text-align: center;
 }
 
 .hero h1 {
@@ -157,7 +162,6 @@ li {
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
 }
 
 /* Responsive Two-Column Layout */
@@ -169,7 +173,6 @@ li {
     .hero-container {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
         gap: 4rem;
     }
 
@@ -182,7 +185,6 @@ li {
         flex: 1;
         text-align: left;
         max-width: none;
-        padding-left: 2rem;
     }
 
     .hero h2 {
@@ -494,6 +496,8 @@ footer {
     .testimonials-container {
         min-height: 380px;
     }
+
+
 }
 
 @media (max-width: 600px) {
@@ -558,6 +562,20 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: row; /* Switch to row layout on desktop */
+        justify-content: flex-start; /* Align to left */
+        text-align: left;
+    }
+
+    .header-group {
+        justify-content: flex-start;
+    }
+
+    .tagline {
+        margin-top: 0;
+    }
+
     .sticky-header .header-portrait {
         width: 50px;
         height: 50px;
@@ -566,9 +584,5 @@ footer {
     .sticky-header.scrolled .header-portrait {
         width: 40px;
         height: 40px;
-    }
-
-    .tagline {
-        font-size: 0.9rem; /* Slightly smaller tagline */
     }
 }
