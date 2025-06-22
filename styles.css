@@ -46,7 +46,6 @@ li {
 .header-group {
     display: flex;
     flex-direction: column;
-    align-items: left;
     width: 100%;
 }
 
@@ -68,6 +67,28 @@ li {
     border-bottom: 6px solid var(--bronze-accent);
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+.sticky-header::before {
+    content: "";
+    position: absolute;
+    top: -48px;
+    left: 0;
+    width: 100%;
+    height: 136%;
+    background-image: url('header-bg.jpg');
+    background-size: cover; /* Adjust based on your image */
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    opacity: 0.15; /* Very subtle */
+    z-index: -1;
+}
+
+/* Ensure header content remains visible */
+.header-content,
+.header-group {
+    position: relative;
+    z-index: 2;
 }
 
 .sticky-header.scrolled {
@@ -617,5 +638,31 @@ footer {
     /* Adjust scrolled state */
     .sticky-header.scrolled .tagline {
         font-size: 0.9rem;
+    }
+
+    /* Attribution styling */
+    footer .attribution {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 1rem;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.4;
+    }
+
+    footer .attribution a {
+        color: var(--bronze-accent);
+        text-decoration: none;
+    }
+
+    footer .attribution a:hover {
+        text-decoration: underline;
+    }
+
+    /* Adjust for scrolled state */
+    .sticky-header.scrolled::before {
+        opacity: 0.1; /* Even more subtle when scrolled */
     }
 }
