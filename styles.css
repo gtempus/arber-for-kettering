@@ -246,6 +246,12 @@ li {
     padding: 3rem 0;
 }
 
+.priorities{
+    h3, h4{
+        margin-top: 1rem;
+    }
+}
+
 .section-alt {
     background-color: var(--neutral-light);
 }
