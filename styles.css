@@ -52,7 +52,7 @@ li {
 /* Portrait + logo container */
 .header-identity {
     display: flex;
-    align-items: center;
+    align-items: normal;
     gap: 15px;
 }
 
@@ -617,7 +617,7 @@ footer {
 
     .tagline {
         margin-top: 0;
-        margin-left: 15px;
+        margin-left: 0;
         text-align: left;
         flex: 1 0 100%; /* Force to new line */
         order: 1;
@@ -628,13 +628,13 @@ footer {
     }
 
     .sticky-header .header-portrait {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     .sticky-header.scrolled .header-portrait {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
     }
 
     .header-identity {
@@ -643,7 +643,7 @@ footer {
 
     /* Adjust scrolled state */
     .sticky-header.scrolled .tagline {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     /* Attribution styling */
