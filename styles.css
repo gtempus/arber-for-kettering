@@ -678,3 +678,115 @@ footer {
         opacity: 0.1; /* Even more subtle when scrolled */
     }
 }
+
+/* Endorsement Section Styles */
+.endorsement {
+    padding: 3rem 0;
+    background-color: var(--neutral-light);
+}
+
+.endorsement-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.endorsement-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.endorsement-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.endorsement-content {
+    text-align: center;
+    max-width: 700px;
+}
+
+.endorsement-quote {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--primary-green);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.endorsement-quote:before,
+.endorsement-quote:after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--bronze-accent);
+    opacity: 0.3;
+    position: absolute;
+}
+
+.endorsement-quote:before {
+    top: -0.5rem;
+    left: 0;
+}
+
+.endorsement-quote:after {
+    bottom: -2rem;
+    right: 0;
+}
+
+.endorsement-author {
+    font-weight: bold;
+    color: var(--primary-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.endorsement-role {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .endorsement-container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .endorsement-content {
+        text-align: left;
+        padding-left: 2rem;
+    }
+
+    .endorsement-quote {
+        padding: 0;
+    }
+
+    .endorsement-quote:before {
+        left: -1.5rem;
+    }
+
+    .endorsement-quote:after {
+        right: -1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .endorsement-container {
+        gap: 3rem;
+    }
+
+    .endorsement-image {
+        max-width: 350px;
+    }
+
+    .endorsement-quote {
+        font-size: 1.4rem;
+    }
+}
