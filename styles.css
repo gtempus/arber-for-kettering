@@ -246,8 +246,14 @@ li {
     padding: 3rem 0;
 }
 
+.aboutme{
+    h2, h3{
+        margin-top: 1rem;
+    }
+}
+
 .priorities{
-    h3, h4{
+    h2, h3{
         margin-top: 1rem;
     }
 }
