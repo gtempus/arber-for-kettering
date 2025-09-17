@@ -149,7 +149,7 @@ li {
 
 /* Hero Section - Two Column Layout */
 .hero {
-    padding: 85px 0 50px;
+    padding: 85px 0 0;
     background-color: var(--primary-green);
     color: white;
 }
@@ -196,6 +196,16 @@ li {
 .hero-buttons {
     display: flex;
     gap: 1rem;
+}
+
+/* Check donation text */
+.check-donation {
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: left;
 }
 
 /* Responsive Two-Column Layout */
